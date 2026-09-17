@@ -1,0 +1,8 @@
+{
+  "playlists": [
+    { "name": "ALL TRACKS", "match": {} },
+    { "name": "70s AT40",   "match": { "year_range": [1970, 1979] } },
+    { "name": "YACHT ROCK", "match": { "artists": ["Hall", "Steely Dan", "Toto", "Doobie"] } },
+    { "name": "LATE NIGHT", "match": { "albums": ["Blue", "Kind of Blue"] } }
+  ]
+}

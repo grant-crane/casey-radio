@@ -1,0 +1,50 @@
+# Audio: source material, voice references, generated speech.
+# None of this may be published.
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.aiff
+*.aif
+*.ogg
+*.opus
+*.wma
+*.webm
+
+# Derived from copyrighted broadcasts
+casey_corpus.jsonl
+casey_source*
+corpus*.jsonl
+vocals/
+filtered/
+transcripts/
+
+# Generated speech in a cloned voice
+cache/
+tmp/
+
+# Working persona file; Modelfile.example is tracked instead
+Modelfile
+
+# Local config; playlists.example.json is tracked instead
+playlists.json
+
+# Python
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Runtime
+logs/
+*.log
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+._*
+Thumbs.db

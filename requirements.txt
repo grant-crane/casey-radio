@@ -1,0 +1,27 @@
+# Casey Radio — Python dependencies
+#
+# Install PyTorch separately first, so pip pulls the CPU-only build rather
+# than the much larger CUDA wheel:
+#
+#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt
+
+# Speech synthesis. The maintained community fork of Coqui TTS; the original
+# `TTS` package has been unmaintained since early 2024 and its pins have rotted.
+coqui-tts>=0.25
+
+# Audio
+sounddevice>=0.4.6        # PortAudio bindings; needs libportaudio2 + portaudio19-dev
+soundfile>=0.12           # libsndfile bindings; needs libsndfile1
+numpy>=1.24
+
+# Metadata
+mutagen>=1.47
+
+# Local LLM over HTTP
+requests>=2.31
+
+# GPIO. Raspberry Pi only — harmless elsewhere, and controls.py imports it
+# lazily so the project still runs on a development machine without it.
+gpiozero>=2.0
+lgpio>=0.2; platform_machine == "aarch64"
