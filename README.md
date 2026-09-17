@@ -143,6 +143,7 @@ audio.py             Decoding and playback; sole owner of the output device
 library.py           Library scanning, playlist filtering, intro cache
 radio.py             State machine and entry point
 generate_intros.py   Batch synthesis — deliberately separate from playback
+doctor.py            Preflight check — verifies the environment before a run
 
 pipeline/            One-time corpus preparation
   transcribe_source.py   Whisper transcription of separated vocal stems
@@ -171,7 +172,9 @@ ollama pull llama3.2:3b
 cp Modelfile.example Modelfile     # then edit to taste
 ollama create casey -f Modelfile
 
-# Point MUSIC_DIR in config.py at your library, then:
+# Point MUSIC_DIR in config.py at your library, then check the environment:
+python doctor.py
+
 python generate_intros.py --dry-run --limit 10   # review the text first
 python generate_intros.py                        # synthesise (slow)
 python radio.py
